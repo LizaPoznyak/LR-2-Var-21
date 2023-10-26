@@ -9,7 +9,8 @@ import random
 
 
 def func(arg):
-    if isinstance(arg, list): # Возвращает True, если указанный объект является экземпляром указанного класса (классов), либо наследующегося от него класса
+    if isinstance(arg,
+                  list):  # Возвращает True, если указанный объект является экземпляром указанного класса (классов), либо наследующегося от него класса
         indexes = [i for i, value in enumerate(arg) if value == 0][:2]
         if len(indexes) == 0:
             return "В списке нет нулей!"
@@ -18,7 +19,7 @@ def func(arg):
         elif len(arg[indexes[0] + 1:indexes[1]]) == 0:
             return "Суммы нет! Между нулями нет элементов!"
         else:
-            summ = sum(arg[indexes[0] + 1:indexes[1]]) # 1:indexes[1] срез до второго нуля
+            summ = sum(arg[indexes[0] + 1:indexes[1]])  # 1:indexes[1] срез до второго нуля
             return summ
     elif isinstance(arg, tuple):
         max_value = max(arg)
@@ -30,7 +31,8 @@ def func(arg):
         digit_sum = sum([int(digit) for digit in str(arg) if int(digit) % 2 == 0])
         return digit_sum
     elif isinstance(arg, str):
-        unicode_list = [ord(char) for char in arg] # ord(char) возвращает числовое представление символа char в таблице символов Unicode
+        unicode_list = [ord(char) for char in
+                        arg]  # ord(char) возвращает числовое представление символа char в таблице символов Unicode
         return unicode_list
     else:
         return "Неизвестный тип!"
@@ -38,7 +40,7 @@ def func(arg):
 
 def fill_list(my_list, length_of_my_list):
     numberToAdd = 0
-    print("Введите элементы списка :")
+    print("Введите элементы списка:")
     for i in range(1, length_of_my_list + 1):
         print("Элемент №", i)
         while True:
@@ -65,7 +67,7 @@ while True:
                 print("Некорректный ввод!")
                 continue
             while True:
-                choice = input("Выберите способ заполнение списка :\n"
+                choice = input("Выберите способ заполнение списка:\n"
                                "1 - Заполнить список случайными числами\n"
                                "2 - Заполнить список числами, введенными с клавиатуры\n")
                 if choice == "1":

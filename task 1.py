@@ -5,15 +5,14 @@ def func(num):
     for i in range(1, num + 1):
         if num % i == 0:
             divisors.append(i)
-    print("Все делители числа :\n", divisors)
-    pass
+    return divisors
 
 
 while True:
     try:
-        digit = int(input("Введите число : "))
+        digit = int(input("Введите число: "))
         if digit > 0:
-            func(digit)
+            print("Все делители числа:\n", func(digit))
             break
         else:
             print("Число равно нулю!")
